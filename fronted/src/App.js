@@ -3,8 +3,8 @@ import cardProp from "./data/cardProp";
 import Products from "./components/Products";
 import { Link } from "react-router-dom";
 import { Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
-import Product from "./components/Product";
+import Home from "./page/Home";
+import Product from "./page/Product";
 function App() {
   return (
     <div className="grid-container">
