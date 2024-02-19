@@ -1,6 +1,6 @@
 import React from "react";
 
-function Raiting() {
+function Raiting({puan}) {
   return (
     <div className="raiting">
       <span>
@@ -18,6 +18,7 @@ function Raiting() {
       <span>
         <i className="fa fa-star"></i>
       </span>
+      ({puan} Oy)
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React from "react";
 import Raiting from "./Raiting";
 
 function Products({data}) {
+    console.log(data.image);
   return (
     <div className="card" key={data._id}>
       <a>
@@ -9,7 +10,7 @@ function Products({data}) {
       </a>
       <div className="card-body">
         <a>{data.title}</a>
-        <Raiting />
+        <Raiting puan={data.puan}/>
         <div className="price">{data.price}</div>
       </div>
     </div>

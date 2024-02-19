@@ -38,6 +38,14 @@ footer {
   grid-area: footer;
   color: white;
 }
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+li {
+  margin-top: 1rem;
+}
 
 a {
   text-decoration: none;
@@ -64,12 +72,20 @@ a:hover {
 .row.center {
   justify-content: center;
 }
+.row.top {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
 
 img {
   border-radius: 0.5rem;
 }
 img.m {
   max-width: 18rem;
+  width: 100%;
+}
+img.large {
   width: 100%;
 }
 .card {
@@ -88,6 +104,43 @@ img.m {
   margin-bottom: 0.5rem;
 }
 .raiting {
+  display: flex;
+  align-items: center;
   color: gold;
   margin: 0.1rem;
+}
+.raiting p {
+  color: black;
+}
+.desc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.btn {
+  background-color: rgb(60, 60, 194);
+  color: #fff;
+  border: none;
+  padding: 7px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+.btn:hover {
+  background-color: rgb(92, 92, 198);
+}
+
+.col-1 {
+  flex: 2 1 25rem;
+}
+
+.col-2 {
+  flex: 1 1 30rem;
+}
+.succes {
+  color: rgb(105, 249, 83);
+}
+.danger {
+  color: rgb(246, 48, 33);
 }
