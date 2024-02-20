@@ -2,10 +2,12 @@ import data from "./data/cardProp";
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import { thunk } from "redux-thunk";
 import { productReducer } from "./reducer/productReducer";
+import { productDetailReducer } from "./reducer/productDetailRedycer";
 
 const initialState = {};
 const reducer = combineReducers({
   productList: productReducer,
+  productDetail:productDetailReducer
 });
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

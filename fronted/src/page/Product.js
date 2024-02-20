@@ -1,35 +1,44 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import cardProp from "../data/cardProp";
 import Raiting from "../components/Raiting";
+import { useDispatch, useSelector } from "react-redux";
+import { productDetail } from "../actions/productDetail";
+import Loading from "../components/Loading";
+import Error from "../components/Error";
 
 function Product() {
   const { id } = useParams();
-  const data = cardProp.find((item) => item._id.toString() === id);
-  console.log(data);
-  if (!data) {
+  const distpatch = useDispatch();
+  const productDetails = useSelector((state) => state.productDetail);
+
+  const { loading, error, product } = productDetails;
+
+  useEffect(() => {
+    distpatch(productDetail(id));
+  }, [distpatch, id]);
+
+  if (!product) {
     return <div>Ürün bulunamadı</div>;
   }
 
   return (
-    <div className="row top" key={data._id}>
+    <div className="row top" key={product._id}>
+      {loading ? <Loading /> : null}
+      {error && <Error variant="danger">{"Beklenmedik bir hata oluştu"}</Error>}
       <div className="col-2">
-        <img className="large" src={data.image} alt="#" />
+        <img className="large" src={product.image} alt="#" />
       </div>
       <div className="col-1">
         <ul className="colum">
           <li>
-            <h1>{data.title}</h1>
+            <h1>{product.title}</h1>
           </li>
           <li>
-            <Raiting puan={data.puan} />
+            <Raiting puan={product.puan} />
           </li>
-          <li>
-           Fiyat:{data.price}
-          </li>
-          <li>
-           Açıklama:{data.description}
-          </li>
+          <li>Fiyat:{product.price}</li>
+          <li>Açıklama:{product.description}</li>
         </ul>
       </div>
       <div className="col-1">
@@ -38,14 +47,14 @@ function Product() {
             <li>
               <div className="row">
                 <div>Fiyat</div>
-                <div className="price">{data.price} TL</div>
+                <div className="price">{product.price} TL</div>
               </div>
             </li>
             <li>
               <div className="row">
                 <div>Adet</div>
-                {data.stok > 0 ? (
-                  <p className="succes">{data.stok}</p>
+                {product.stok > 0 ? (
+                  <p className="succes">{product.stok}</p>
                 ) : (
                   <p className="danger">Ürün Tükendi</p>
                 )}
