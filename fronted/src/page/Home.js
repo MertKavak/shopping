@@ -1,39 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Products from "../components/Products";
-import cardProp from "../data/cardProp";
-import axios from "axios";
+
 import Loading from "../components/Loading";
 import Error from "../components/Error";
+import { useDispatch, useSelector } from "react-redux";
+import { listProduct } from "../actions/productActions";
 
 const Home = () => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [errmessage, setErrmessage] = useState(false);
-  const [errmessagetext, setErrmessagetext] = useState(null);
+  const distpatch = useDispatch();
+  const productList = useSelector((state) => state.productList);
+  const { error, product, loading } = productList;
+
+  console.log(loading);
 
   useEffect(() => {
-    async function getUser() {
-      try {
-        setLoading(true);
-        const data = await axios.get("/api/productss");
-
-        setData(data.data);
-        setLoading(false);
-        setErrmessage(false);
-      } catch (error) {
-        setErrmessagetext(error.message);
-        setLoading(false);
-        setErrmessage(true);
-      }
-    }
-    getUser();
+    distpatch(listProduct());
   }, []);
   return (
     <div className="row center">
       {loading ? <Loading /> : null}
-      {errmessage && <Error variant="danger" >{"Beklenmedik bir hata oluştu"}</Error>}
-      {data.map((item) => (
+      {error && <Error variant="danger">{"Beklenmedik bir hata oluştu"}</Error>}
+      {product.map((item) => (
         <Link to={`/urun/${item._id}`} key={item._id}>
           <Products data={item} />
         </Link>

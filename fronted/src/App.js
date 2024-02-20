@@ -23,6 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/urun/:id" element={<Product />} />
+
         </Routes>
       </main>
       <footer className="row center">Mert Kavak</footer>

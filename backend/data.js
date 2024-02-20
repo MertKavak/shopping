@@ -2,7 +2,7 @@ export default {
     products: [
       {
         _id: 1,
-        title: "Keten Pantolon",
+        title: "Keten Pantolonnnn",
         image: "/img/pantolon_1.jpg",
         price: 599.99,
         stok: 10,
