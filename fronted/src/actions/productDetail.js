@@ -13,7 +13,10 @@ export const productDetail = (productID) => async (distpatch) => {
   } catch (error) {
     distpatch({
       type: PRODUCTDETAİL_REQUEST_FAIL,
-      payload: error.response.data.message,
+      payload:
+        error.message && error.response.data.message
+          ? error.response.data.message
+          : error.message,
     });
   }
 };

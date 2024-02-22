@@ -1,13 +1,20 @@
-import data from "./data/cardProp";
 import { applyMiddleware, combineReducers, compose, createStore } from "redux";
 import { thunk } from "redux-thunk";
 import { productReducer } from "./reducer/productReducer";
 import { productDetailReducer } from "./reducer/productDetailRedycer";
+import { cardReducer } from "./reducer/cardReducer";
 
-const initialState = {};
+const initialState = {
+  cardItem: {
+    cartItem: localStorage.getItem("cartItem")
+      ? JSON.parse(localStorage.getItem("cartItem"))
+      : [],
+  },
+};
 const reducer = combineReducers({
   productList: productReducer,
-  productDetail:productDetailReducer
+  productDetail: productDetailReducer,
+  cardItem: cardReducer,
 });
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

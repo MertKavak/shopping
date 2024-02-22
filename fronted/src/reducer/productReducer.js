@@ -5,7 +5,7 @@ import {
 } from "../constans/productConstans";
 
 export const productReducer = (
-  state = { product: [], loading: false },
+  state = { product: [], loading: false, error: false },
   action
 ) => {
   switch (action.type) {

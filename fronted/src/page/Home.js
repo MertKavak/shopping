@@ -19,13 +19,16 @@ const Home = () => {
   }, []);
   return (
     <div className="row center">
-      {loading ? <Loading /> : null}
+      {loading ? (
+        <Loading />
+      ) : (
+        product && product.map((item) => (
+          <Link to={`/product/${item._id}`} key={item._id}>
+            <Products data={item} />
+          </Link>
+        ))
+      )}
       {error && <Error variant="danger">{"Beklenmedik bir hata oluştu"}</Error>}
-      {product.map((item) => (
-        <Link to={`/urun/${item._id}`} key={item._id}>
-          <Products data={item} />
-        </Link>
-      ))}
     </div>
   );
 };
