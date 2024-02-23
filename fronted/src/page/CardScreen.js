@@ -105,7 +105,7 @@ function CardScreen() {
                         alignItems: "flex-start",
                       }}
                       type="button"
-                      className="btn danger"
+                      className="btn"
                       onClick={() => deleteItemHandle(item.product)}
                     >
                       Sil
