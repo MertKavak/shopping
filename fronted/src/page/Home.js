@@ -12,7 +12,7 @@ const Home = () => {
   const productList = useSelector((state) => state.productList);
   const { error, product, loading } = productList;
 
-  console.log(loading);
+  console.log(product);
 
   useEffect(() => {
     distpatch(listProduct());
@@ -22,7 +22,7 @@ const Home = () => {
       {loading ? (
         <Loading />
       ) : (
-        product && product.map((item) => (
+        product && product.product && product.product.map((item) => (
           <Link to={`/product/${item._id}`} key={item._id}>
             <Products data={item} />
           </Link>

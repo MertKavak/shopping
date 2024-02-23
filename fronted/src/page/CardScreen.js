@@ -39,10 +39,10 @@ function CardScreen() {
             <Error variant="danger">{"Sepetinizde Ürün Bulunmamaktadır"}</Error>
           </>
         ) : (
-          <ul className="card">
+          <ul>
             <li>
               {cartItem.map((item) => (
-                <div key={item.product} className="row mb ">
+                <div key={item.product} className="row mb card">
                   <div
                     style={{
                       display: "flex",
@@ -105,7 +105,7 @@ function CardScreen() {
                         alignItems: "flex-start",
                       }}
                       type="button"
-                      className="btn"
+                      className="btn danger"
                       onClick={() => deleteItemHandle(item.product)}
                     >
                       Sil

@@ -39,7 +39,7 @@ function Product() {
                 <h1>{product.title}</h1>
               </li>
               <li>
-                <Raiting puan={product.puan} />
+                <Raiting puan={product.raiting} />
               </li>
               <li>Fiyat:{product.price}</li>
               <li>Açıklama:{product.description}</li>
@@ -65,16 +65,16 @@ function Product() {
                   </div>
                 </li>
                 <li>
-                  {product.stok > 0 && (
+                  {product.countInstock > 0 && (
                     <>
                       <div className="row">
                         <div>Adet</div>
-                        {product.stok > 0 ? (
+                        {product.countInstock > 0 ? (
                           <select
                             value={qty}
                             onChange={(e) => setQty(e.target.value)}
                           >
-                            {[...Array(product.stok).keys()].map((x) => (
+                            {[...Array(product.countInstock).keys()].map((x) => (
                               <option key={x + 1} value={x + 1}>
                                 {x + 1}
                               </option>

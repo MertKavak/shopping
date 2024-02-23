@@ -12,6 +12,7 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
+  background-color: #fbf9f8;
 }
 
 #root {
@@ -95,6 +96,9 @@ img.large {
   border-radius: 0.5rem;
   margin: 1rem;
   padding: 1rem;
+  box-shadow: 10px 10px 32px -15px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 10px 10px 32px -15px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 10px 10px 32px -15px rgba(0, 0, 0, 0.6);
 }
 .price {
   font-size: 2rem;
@@ -156,10 +160,16 @@ option {
   flex: 1 1 30rem;
 }
 .succes {
-  color: rgb(105, 249, 83);
+  background-color: rgb(105, 249, 83);
+  padding: 1rem 2rem;
+  color: white;
+
 }
 .danger {
-  color: rgb(246, 48, 33);
+  background-color: rgb(246, 48, 33);
+  padding: 1rem 2rem;
+  color: white;
+
 }
 
 .error {
@@ -184,7 +194,7 @@ input {
   flex-direction: column;
   margin-bottom: 1.5rem;
 }
-.form  label {
+.form label {
   display: block;
   margin-bottom: 1rem 0;
   font-size: 1.5rem;
