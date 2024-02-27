@@ -47,5 +47,21 @@ export default {
       description: "Kumaşı likralıdır. Giydikçe esnek özellik gösterir.",
       raiting: 12,
     },
+    {
+      title: "Kargo Pantolons",
+      image: "/img/pantolon_5.jpg",
+      price: 899.99,
+      countInstock: 1,
+      description: "Kumaşı likralıdır. Giydikçe esnek özellik gösterir.",
+      raiting: 12,
+    },
+    {
+      title: "Kargo Pantolonss",
+      image: "/img/pantolon_5.jpg",
+      price: 899.99,
+      countInstock: 1,
+      description: "Kumaşı likralıdır. Giydikçe esnek özellik gösterir.",
+      raiting: 12,
+    },
   ],
 };

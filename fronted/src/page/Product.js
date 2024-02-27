@@ -45,7 +45,7 @@ function Product() {
               <li>Açıklama:{product.description}</li>
             </ul>
           </div>
-          <div className="col-1">
+          <div className="col-2">
             <div className="card card-body">
               <ul>
                 <li>
@@ -65,7 +65,7 @@ function Product() {
                   </div>
                 </li>
                 <li>
-                  {product.countInstock > 0 && (
+                  
                     <>
                       <div className="row">
                         <div>Adet</div>
@@ -82,11 +82,11 @@ function Product() {
                           </select>
                         ) : null}
                       </div>
-                      <button onClick={handleCart} className="btn">
-                        Sepete Ekle
+                      <button disabled={product.countInstock === 0 } onClick={handleCart} className={`btn ${product.countInstock === 0 ? "fail" : ""}`} >
+                      {product.countInstock !== 0 ? 'Sepete Ekle' : 'Stok Yok'}
                       </button>
                     </>
-                  )}
+                 
                 </li>
               </ul>
             </div>

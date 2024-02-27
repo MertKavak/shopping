@@ -72,7 +72,7 @@ function CardScreen() {
                       alignItems: "flex-start",
                     }}
                   >
-                    Fiyat: {item.price}
+                   <b>Fiyat:</b> <span style={{color:"gray"}}>{item.price} TL</span> 
                   </div>
                   <div
                     style={{
@@ -90,22 +90,20 @@ function CardScreen() {
                         );
                       }}
                     >
-                      {[...Array(item.stok).keys()].map((x) => (
+                      {[...Array(item.countInstock).keys()].map((x) => (
                         <option key={x + 1} value={x + 1}>
                           {x + 1}
                         </option>
                       ))}
                     </select>
                   </div>
+                 <div style={{marginRight:"1rem"}}>
+                 <b>Tutar:</b> <span style={{color:"gray"}}>{(item.price * item.qty).toFixed(2)} TL</span> 
+                 </div>
                   <div>
                     <button
-                      style={{
-                        display: "flex",
-                        flex: 0.3,
-                        alignItems: "flex-start",
-                      }}
                       type="button"
-                      className="btn"
+                      className="btn danger"
                       onClick={() => deleteItemHandle(item.product)}
                     >
                       Sil
@@ -121,10 +119,10 @@ function CardScreen() {
         <div className="card">
           <div className="card-body">
             <ul>
-              <li>Toplam({cartItem.reduce((a, b) => a + b.qty, 0)} ürün)</li>
+              <li><b>Toplam</b><span style={{color:"gray"}}>({cartItem.reduce((a, b) => a + b.qty, 0)} ürün)</span></li>
               <li>
-                {cartItem.reduce((a, b) => a + b.price * b.qty, 0).toFixed(2)}
-                TL
+                <b>{cartItem.reduce((a, b) => a + b.price * b.qty, 0).toFixed(2)} TL</b>
+                
               </li>
               <li>
                 <button disabled={cartItem.length === 0} onClick={addForm} className="btn">

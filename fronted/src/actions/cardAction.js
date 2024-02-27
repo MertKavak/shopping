@@ -2,7 +2,9 @@ import axios from "axios";
 import { CARD_ITEM_ADD, CARD_ITEM_DELETE } from "../constans/productConstans";
 
 export const AddCard = (productId, qty) => async (dispatch, getState) => {
+  console.log(productId, qty)
   const { data } = await axios.get(`/api/product/${productId}`);
+
   dispatch({
     type: CARD_ITEM_ADD,
     payload: {
@@ -10,7 +12,7 @@ export const AddCard = (productId, qty) => async (dispatch, getState) => {
       price: data.price,
       image: data.image,
       product: data._id,
-      stok: data.stok,
+      countInstock: data.countInstock,
       qty,
     },
   });

@@ -31,7 +31,7 @@ function App() {
               <span className="badge">{cartItem.length}</span>
             )}
           </a>
-          <Link to="/register">Uye ol</Link>
+          <Link to="/register">Üye ol</Link>
         </div>
       </header>
       <main>

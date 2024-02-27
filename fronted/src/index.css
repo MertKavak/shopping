@@ -144,12 +144,19 @@ option {
   border: none;
   padding: 1.2rem 2.5rem;
   border-radius: 0.5rem;
-  cursor: pointer;
-
+  
+  width: 100%;
   margin-top: 0.3rem;
+  box-shadow: 10px 10px 32px -15px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 10px 10px 32px -15px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 10px 10px 32px -15px rgba(0, 0, 0, 0.6);
 }
-.btn:hover {
-  background-color: rgb(92, 92, 198);
+.btn.fail{
+  background-color: gray;
+}
+.btn:not(.fail):hover {
+  background-color: blue; /* Change the hover color */
+  cursor: pointer;
 }
 
 .col-1 {
@@ -157,7 +164,7 @@ option {
 }
 
 .col-2 {
-  flex: 1 1 30rem;
+  flex: 1 1 10rem;
 }
 .succes {
   background-color: rgb(105, 249, 83);
