@@ -7,7 +7,7 @@ import { productDetail } from "../actions/productDetail";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
 
-function Product() {
+function ProductDetail() {
   const { id } = useParams();
   const distpatch = useDispatch();
   const productDetails = useSelector((state) => state.productDetail);
@@ -98,4 +98,4 @@ function Product() {
   );
 }
 
-export default Product;
+export default ProductDetail;

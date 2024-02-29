@@ -15,6 +15,7 @@ export const cardReducer = (state = { cartItem: [] }, action) => {
       } else {
         return { ...state, cartItem: [...state.cartItem, item] };
       }
+
     case CARD_ITEM_DELETE:
       return {
         ...state,

@@ -14,7 +14,7 @@ export const userReducer = (
 ) => {
   switch (action.type) {
     case USER_SIGNIN_RESPONSE:
-      return { ...state, loading: false };
+      return { ...state, loading: true };
     case USER_SIGNIN_SUCCESS:
       return { ...state, loading: false, userInfo: action.payload };
     case USER_SIGNIN_FAIL:
