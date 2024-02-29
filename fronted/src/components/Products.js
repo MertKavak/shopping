@@ -3,7 +3,7 @@ import Raiting from "./Raiting";
 import { Link } from "react-router-dom";
 
 function Products({ data, handleCart }) {
-  console.log(data.image);
+  // console.log(data.image);
 
   return (
     <div className="card" key={data._id}>

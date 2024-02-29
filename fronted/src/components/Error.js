@@ -3,7 +3,7 @@ import React from "react";
 function Error(props) {
   return (
     <div>
-      <h2 className={props.variant}>{props.children}</h2>
+      <h4 className={props.variant}>{props.children}</h4>
     </div>
   );
 }
