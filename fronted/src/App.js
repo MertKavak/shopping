@@ -7,6 +7,10 @@ import Login from "./page/Login";
 import Profile from "./page/Profile";
 import Layout from "./components/Layout";
 import ProductDetail from "./page/ProductDetail";
+import UserRoutes from "./components/UserRoutes";
+import Shipping from "./page/Shipping";
+import Payment from "./page/Payment";
+
 function App() {
   return (
     <Layout>
@@ -16,7 +20,17 @@ function App() {
         <Route path="/cart/:id?" element={<CardScreen />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/shipping" element={<Shipping />} />
+        <Route path="/payment" element={<Payment />} />
+
+        <Route
+          path="/profile"
+          element={
+            <UserRoutes>
+              <Profile />
+            </UserRoutes>
+          }
+        />
       </Routes>
     </Layout>
   );

@@ -23,4 +23,9 @@ export const USER_LOGOUT_ITEM = "USER_LOGOUT_ITEM";
 export const CARD_ITEM_ADD = 'CARD_ITEM_ADD';
 export const CARD_ITEM_DELETE = "CARD_ITEM_DELETE";
 
+//Address 
+export const ADDRESS_ADD = 'ADDRESS_ADD ';
+
+export const PAYMENT_ADD = 'PAYMENT_ADD ';
+
 

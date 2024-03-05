@@ -1,4 +1,4 @@
-import { CARD_ITEM_ADD, CARD_ITEM_DELETE } from "../constans/productConstans";
+import { ADDRESS_ADD, CARD_ITEM_ADD, CARD_ITEM_DELETE, PAYMENT_ADD } from "../constans/productConstans";
 
 export const cardReducer = (state = { cartItem: [] }, action) => {
   switch (action.type) {
@@ -21,6 +21,16 @@ export const cardReducer = (state = { cartItem: [] }, action) => {
         ...state,
         cartItem: state.cartItem.filter((x) => x.product !== action.payload),
       };
+    case ADDRESS_ADD:
+      return {
+        ...state,
+        userAddress: action.payload
+      };
+      case PAYMENT_ADD:
+        return {
+          ...state,
+          userMethot: action.payload
+        }
     default:
       return state;
   }

@@ -203,7 +203,6 @@ input {
   margin-bottom: 1.5rem;
 }
 .form label {
-  display: block;
   margin-bottom: 1rem 0;
   font-size: 1.5rem;
   color: gray;
@@ -232,4 +231,18 @@ label {
 }
 .profileMenu > a {
   background-color: #c0c0c0;
+}
+.check-step > div{
+  border-top:0.3rem solid gray ;
+  flex:1;
+  font-size: 2rem;
+  padding: 1rem;
+  font-weight: bold;
+
+}
+.check-step > div.active{
+  border-top:0.3rem solid brown ;
+  color:brown ;
+  font-weight: bold;
+  
 }

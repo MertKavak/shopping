@@ -4,6 +4,11 @@ import Products from "../modal/productModal.js";
 
 const productRoter = express.Router();
 
+productRoter.get("/seed", async (req, res) => {
+  const creadtedProducts = await Products.insertMany(data.products);
+  res.send({ creadtedProducts });
+});
+
 productRoter.get("/", async (req, res) => {
   const product = await Products.find({});
   if (product) {
@@ -22,9 +27,6 @@ productRoter.get("/:id", async (req, res) => {
   }
 });
 
-productRoter.get("/seed", async (req, res) => {
-  const creadtedProducts = await Products.insertMany(data.products);
-  res.send({ creadtedProducts });
-});
+
 
 export default productRoter;

@@ -38,7 +38,7 @@ function Login() {
     <form className="form" onSubmit={handleSubmit(handleSubmits)}>
       <h1 style={{ textAlign: "center" }}>GİRİŞ YAP</h1>
       <div>
-        <label> Email:</label>
+        <label style={errors.email && { color: "red" }}> Email:</label>
         <input
           className={errors.email && "borderError"}
           {...register("email", {
@@ -54,7 +54,7 @@ function Login() {
         )}
       </div>
       <div>
-        <label>Şifre:</label>
+        <label style={errors.email && { color: "red" }}>Şifre:</label>
         <input
           className={errors.password && "borderError"}
           {...register("password", {

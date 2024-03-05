@@ -13,6 +13,7 @@ function Header() {
           Shopping
         </Link>
       </div>
+      <input placeholder="Arama yapınız"  />
       <div>
         <a href="/cart">
           Sepet
@@ -28,7 +29,7 @@ function Header() {
         </a>
         <Link to={user.userInfo.token ? "/profile" : "/register"}>
           {user.userInfo.name ? user.userInfo.name : "Üye Ol"}
-          <div className="profileMenu"><Link>Logout</Link> </div>
+          {/* <div className="profileMenu"><Link>Logout</Link> </div> */}
         </Link>
        
       </div>

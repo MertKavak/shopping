@@ -5,6 +5,7 @@ import { AddCard, DeleteCard } from "../actions/cardAction";
 import Error from "../components/Error";
 
 function CardScreen() {
+  const navigation = useNavigate()
   const { id } = useParams();
   const { search } = useLocation();
   const qtyUrl = new URLSearchParams(search).get("qty");
@@ -25,7 +26,7 @@ function CardScreen() {
   };
 
   const addForm = () => {
-    console.log("bastı");
+    navigation('/shipping')
   };
   return (
     <div className="row top">
